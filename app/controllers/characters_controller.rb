@@ -14,10 +14,12 @@ class CharactersController < ApplicationController
   end
 
   def create 
-
-    @character = Character.create(character_params(:name, :race, :series, :power_level))
-    CharacterTransformation.create(character_params(:transformation, :character_id => @character.id, :transformation_id => :transformation_id))
-    byebug
+    @character = Character.create(character_params)
+    @transformation = Transformation.find(transformation_params[:transformation_id].to_i)
+    @ct = CharacterTransformation.create(
+      name: "#{@character.name}, #{@transformation.name}",
+      character_id: @character.id, 
+      transformation_id: @transformation.id)
     redirect_to character_path(@character)
   end
 
@@ -31,7 +33,12 @@ class CharactersController < ApplicationController
   end
 
   private
-  def character_params(*args)
-    params.require(:character).permit(*args)
+
+  def character_params
+    params.require(:character).permit(:name, :race, :series, :power_level)
+  end
+
+  def transformation_params
+    params.require(:transformation).permit(:name, :transformation_id)
   end
 end

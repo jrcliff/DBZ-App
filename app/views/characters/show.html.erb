@@ -6,8 +6,7 @@
 <h2>Transformations:</h2>
 <ul>
  <%@transformations.each do |c| %>
- <li><%= c.name %>-
- <%= c.required_transformations%></li>
+ <li><%= c.name %></li>
  <%end%>
  </ul><br>
 <%= link_to "Edit", edit_character_path(@character) %><br><br>
