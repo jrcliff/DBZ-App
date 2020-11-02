@@ -5,6 +5,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+    @transformations = CharacterTransformation.index(params[:id]) 
     
   end
 
@@ -13,7 +14,10 @@ class CharactersController < ApplicationController
   end
 
   def create 
+
     @character = Character.create(character_params(:name, :race, :series, :power_level))
+    CharacterTransformation.create(character_params(:transformation, :character_id => @character.id, :transformation_id => :transformation_id))
+    byebug
     redirect_to character_path(@character)
   end
 

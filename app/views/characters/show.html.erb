@@ -3,6 +3,13 @@
 <h3>Series: <%= @character.series %></h3>
 <h3>Race: <%= @character.race %></h3>
 <h3>Power Level: <%= @character.power_level %></h3>
+<h2>Transformations:</h2>
+<ul>
+ <%@transformations.each do |c| %>
+ <li><%= c.name %>-
+ <%= c.required_transformations%></li>
+ <%end%>
+ </ul><br>
 <%= link_to "Edit", edit_character_path(@character) %><br><br>
 
 <%= link_to "<--Back", characters_path %>

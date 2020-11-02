@@ -8,6 +8,7 @@
 <%= f.text_field :series %><br>
 <%= f.label 'Power Level'%><br>
 <%= f.number_field :power_level %><br>
+<%= collection_select(:transformation, :transformation_id, Transformation.all, :id, :name)%>
 <%= f.submit 'Submit'%>
 <%end%>
 <%= link_to "<--Back", characters_path %>

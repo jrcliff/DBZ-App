@@ -6,4 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Character.create(name: "Goku", race: "Saiyan", series: "Original", power_level: 500)
