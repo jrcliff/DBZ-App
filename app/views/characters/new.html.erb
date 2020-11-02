@@ -1,0 +1,11 @@
+<h1>Add Character</h1>
+<%= form_for @character do |f| %>
+<%= f.label 'Name:'%><br>
+<%= f.text_field :name %><br>
+<%= f.label 'Race:'%><br>
+<%= f.text_field :race %><br>
+<%= f.label 'Series'%>
+<%= f.submit 'Submit'%>
+<%end%>
+
+
