@@ -1,2 +1,4 @@
-<h1>Transformations#show</h1>
-<p>Find me in app/views/transformations/show.html.erb</p>
+<h1>Transformation Details</h1>
+<h2>Name: <%= @transformation.name %></h2>
+<h2>Required Transformations: <%= @transformation.required_transformations %></h2><br>
+<%= link_to "<--Back", transformations_path %>

@@ -1,2 +1,9 @@
-<h1>Transformations#new</h1>
-<p>Find me in app/views/transformations/new.html.erb</p>
+<h1>Ascend To The Next Transformation</h1>
+<%= form_for @transformation do |f| %><br>
+<%= f.label :name %>:<br>
+<%= f.text_field :name %><br>
+<%= f.label :required_transformations %>:<br>
+<%= f.text_field :required_transformations %><br>
+<%= f.submit %><br>
+<% end %>
+<%= link_to "<--Back", transformations_path %>

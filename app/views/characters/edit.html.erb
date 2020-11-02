@@ -1,2 +1,8 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<h1>Edit Character</h1>
+<%= form_for @character do |f| %><br>
+<%= f.label :name%><br>
+<%= f.text_field :name %><br>
+<%= f.label :power_level%><br>
+<%= f.number_field :power_level %><br>
+<%= f.submit %><br>
+<% end %><br>

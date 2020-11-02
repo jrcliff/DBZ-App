@@ -18,7 +18,14 @@ class CharactersController < ApplicationController
   end
 
   def edit
+    @character = Character.find(params[:id])
   end
+
+  def update
+    @character = Character.find(params[:id])
+    @character.update(character_params(:name, :power_level))
+  end
+
   private
   def character_params(*args)
     params.require(:character).permit(*args)

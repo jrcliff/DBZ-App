@@ -4,8 +4,13 @@
 <%= f.text_field :name %><br>
 <%= f.label 'Race:'%><br>
 <%= f.text_field :race %><br>
-<%= f.label 'Series'%>
+<%= f.label 'Series'%><br>
+<%= f.text_field :series %><br>
+<%= f.label 'Power Level'%><br>
+<%= f.number_field :power_level %><br>
 <%= f.submit 'Submit'%>
 <%end%>
+<%= link_to "<--Back", characters_path %>
+
 
 
